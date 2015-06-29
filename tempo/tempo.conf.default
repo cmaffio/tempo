@@ -1,0 +1,4 @@
+$user = "xxxx"
+$password = "yyyy"
+
+return 1;
