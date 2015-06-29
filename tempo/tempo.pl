@@ -285,15 +285,14 @@ FINEICAL
 	close ICAL;
 
 	$dav = new HTTP::DAV;
-	my $url = "https://cloud.bi.esseweb.eu/remote.php/caldav/calendars/cmaffio/assenze_shared_by_admin";
 
-	$dav->credentials( -user=>$user,-pass =>$password, -url =>$url);
-	$dav->open( -url=>$url ) or die("Couldn't open $url: " .$dav->message . "\n");
+	$dav->credentials( -user=>$dav_user,-pass =>$dav_password, -url =>$dav_url);
+	$dav->open( -url=>$dav_url ) or die("Couldn't open $dav_url: " .$dav->message . "\n");
 
-	if ( $dav->put( -local => "/tmp/attivita-$id.ics", -url => $url ) ) {
+	if ( $dav->put( -local => "/tmp/attivita-$id.ics", -url => $dav_url ) ) {
 	} else {
 		print "put failed: " . $dav->message . "\n";
 	}
-	$dav->unlock( -url => $url );
+	$dav->unlock( -url => $dav_url );
 	unlink "/tmp/attivita-$id.ics";
 }
