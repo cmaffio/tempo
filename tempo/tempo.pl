@@ -287,7 +287,7 @@ FINEICAL
 	$dav = new HTTP::DAV;
 	my $url = "https://cloud.bi.esseweb.eu/remote.php/caldav/calendars/cmaffio/assenze_shared_by_admin";
 
-	$dav->credentials( -user=>"cmaffio",-pass =>"l30nard0", -url =>$url);
+	$dav->credentials( -user=>"$user",-pass =>"$password", -url =>$url);
 	$dav->open( -url=>$url ) or die("Couldn't open $url: " .$dav->message . "\n");
 
 	if ( $dav->put( -local => "/tmp/attivita-$id.ics", -url => $url ) ) {
