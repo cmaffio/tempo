@@ -1,4 +1,6 @@
-$user = "xxxx"
-$password = "yyyy"
+$dav_url = "http(s)://";
+
+$dav_user = "xxxxxx";
+$dav_password = "yyyyyy";
 
 return 1;
