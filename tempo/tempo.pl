@@ -4,6 +4,9 @@ use DBI;
 use Switch;
 use DateTime::Format::Strptime;
 use HTTP::DAV;
+use FindBin qw($Bin);
+
+require "$Bin/tempo.conf";
 
 our $dbh = DBI->connect(          
 	"dbi:SQLite:dbname=/home/claudio/bin/tempo/tempo.db", 
